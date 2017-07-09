@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: IAM Resources
+Resources:
+  AdminGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: "Administrators"
+      ManagedPolicyArns: [ "arn:aws:iam::aws:policy/AdministratorAccess" ]

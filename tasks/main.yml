@@ -1,0 +1,11 @@
+- name: generate the stack template
+  template:
+    src: iam.yml
+    dest: "{{ stacks_dir}}/{{ iam_stack_name }}.yml"
+- name: create/update the stack
+  cloudformation:
+    stack_name: "{{ iam_stack_name }}"
+    state: "present"
+    template: "{{ stacks_dir}}/{{ iam_stack_name }}.yml"
+    tags:
+      owner_email: "{{ iam_stack_name }}"
