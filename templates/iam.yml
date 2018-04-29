@@ -1,8 +1,18 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: IAM Resources
 Resources:
-  AdminGroup:
+  AdministratorGroup:
     Type: "AWS::IAM::Group"
     Properties:
       GroupName: "Administrators"
       ManagedPolicyArns: [ "arn:aws:iam::aws:policy/AdministratorAccess" ]
+  PowerUsersGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: "PowerUsers"
+      ManagedPolicyArns: [ "arn:aws:iam::aws:policy/PowerUserAccess" ]
+  ReadOnlyGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: "ReadOnly"
+      ManagedPolicyArns: [ "arn:aws:iam::aws:policy/ReadOnlyAccess" ]
