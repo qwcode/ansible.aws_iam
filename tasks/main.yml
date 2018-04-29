@@ -6,6 +6,5 @@
   cloudformation:
     stack_name: "{{ iam_stack_name }}"
     state: "present"
-    template: "{{ stacks_dir}}/{{ iam_stack_name }}.yml"
-    tags:
-      owner_email: "{{ iam_stack_name }}"
+    template: "{{ stacks_dir }}/{{ iam_stack_name }}.yml"
+    tags: "{{ stack_tags }}"
